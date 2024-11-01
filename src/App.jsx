@@ -6,12 +6,19 @@ import Hello from './components/hello'
 import Message from './components/message'
 import Form from './components/Form'
 import Search from './components/Search'
+import Card from './components/Card'
+import Light from './components/Light'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [light, setLight] = useState(false);
+
   return (
     <>
-      <Search></Search>
+     <div className={`${light ? 'bg-black' : 'bg-white'} flex flex-row h-screen w-screen place-content-center`}> 
+      <Light light={light} setLight={setLight}></Light>
+      <Card name='daniel' profession='eater' desc='he is p cool'></Card>
+      <Card ></Card>
+    </div>
     </>
   )
 }
